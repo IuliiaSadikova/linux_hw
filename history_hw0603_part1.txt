@@ -1,0 +1,9 @@
+   0 cd ..
+   1 cd opt
+   2 touch myfirstbashscript.sh && chmod u+x myfirstbashscript.sh
+   3 ls -l
+   4 export USER=Iuliia
+   5 env
+   6 nano myfirstbashscript.sh
+   7 ./myfirstbashscript.sh
+   8 history > history.txt
