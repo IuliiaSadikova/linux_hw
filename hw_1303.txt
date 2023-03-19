@@ -1,0 +1,39 @@
+   0 touch mysecondscript.sh && chmod u+x mysecondscript.sh
+   1 ls -l
+   2 nano mysecondscript.sh 
+   3 ./mysecondscript.sh 
+   4 cat /tmp/test/newfile/iuliia.txt 
+   5 history > history.txt
+   
+   
+   
+#!/bin/bash
+mkdir /var/task
+touch /var/task/iuliia.txt
+ls -l /root >> /var/task/iuliia.txt
+ps -ef | tail -5 >> /var/task/iuliia.txt
+mkdir -p /tmp/test/newfile
+mv /var/task/iuliia.txt /tmp/test/newfile/iuliia.txt
+echo "Done"
+
+
+
+   
+localhost:~# ./mysecondscript.sh
+Done
+localhost:~# cat /tmp/test/newfile/iuliia.txt
+total 20
+-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
+-rwxr--r--    1 root     root           227 Mar 19 15:56 mysecondscript.sh
+-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
+   61 root      0:00 sh -l
+   62 root      0:00 [kworker/u2:1]
+   78 root      0:00 {mysecondscript.} /bin/bash ./mysecondscript.sh
+   82 root      0:00 ps -ef
+   83 root      0:00 tail -5
+localhost:~# history > history.txt
+localhost:~# export_file history.txt
+
+
