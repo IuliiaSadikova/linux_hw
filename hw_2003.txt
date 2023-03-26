@@ -1,0 +1,93 @@
+   0 touch fullscript.sh && chmod 744 fullscript.sh
+   1 nano fullscript.sh 
+   2 ./fullscript.sh 
+   3 ls -l /tmp
+   4 cat /tmp/mydate.txt
+   5 ls -l /opt
+   6 ls -l /opt/mydate
+   7 cat /opt/mydate/newmydate.txt
+   8 history > history.txt
+ 
+-----------------------------------------------------------------------  
+   
+    #!/bin/bash
+	echo 'Hello student'
+	echo 'Enter tour name'
+	read name
+	echo "Welcome to terminal $name"
+	mkdir -p /tmp/test
+	date +'%H:%M:%S' > /tmp/mydate.txt
+	echo 'Сохраняем данные'
+	 
+	for run in {1..10}
+	do echo $run
+	sleep .5
+	done
+	 
+	echo 'Data saved. Continue work'
+	df -h >> /tmp/mydate.txt
+	mkdir -p /opt/mydate
+	cp /tmp/mydate.txt /opt/mydate/newmydate.txt
+	 
+	for run2 in {1..5}
+	do
+	echo $run2
+	sleep 1
+	done
+	 
+	echo 'Well done Boss'
+	
+-----------------------------------------------------------------------
+	
+	localhost:~# ./fullscript.sh
+	Hello student
+	Enter tour name
+	Belka
+	Welcome to terminal Belka
+	Сохраняем данные
+	1
+	2
+	3
+	4
+	5
+	6
+	7
+	8
+	9
+	10
+	Data saved. Continue work
+	1
+	2
+	3
+	4
+	5
+	Well done Boss
+	localhost:~# ls -l /tmp
+	total 8
+	-rw-r--r--    1 root     root           321 Mar 26 18:26 mydate.txt
+	drwxr-xr-x    2 root     root            37 Mar 26 18:26 test
+	localhost:~# cat /tmp/mydate.txt
+	18:26:37
+	Filesystem                Size      Used Available Use% Mounted on
+	/dev/root                 4.9G      2.3G      2.6G  47% /
+	devtmpfs                 91.3M         0     91.3M   0% /dev
+	tmpfs                    91.4M      8.0K     91.4M   0% /run
+	none                     91.4M         0     91.4M   0% /dev/shm
+	localhost:~# ls -l /opt
+	total 8
+	drwxr-xr-x    2 root     root            67 Mar 26 18:26 mydate
+	drwxr-xr-x    2 root     root           194 Jan  9  2021 temu
+	localhost:~# ls -l /opt/mydate
+	total 4
+	-rw-r--r--    1 root     root           321 Mar 26 18:26 newmydate.txt
+	localhost:~# cat /opt/mydate/newmydate.txt
+	18:26:37
+	Filesystem                Size      Used Available Use% Mounted on
+	/dev/root                 4.9G      2.3G      2.6G  47% /
+	devtmpfs                 91.3M         0     91.3M   0% /dev
+	tmpfs                    91.4M      8.0K     91.4M   0% /run
+	none                     91.4M         0     91.4M   0% /dev/shm
+	localhost:~# history > history.txt
+	localhost:~# export_file history.txt
+	
+		
